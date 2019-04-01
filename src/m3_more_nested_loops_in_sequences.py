@@ -159,17 +159,17 @@ def largest_negative_number(seq_seq):
     #   being constructed (so the SPACE allowed is limited to the
     #   give sequence of sequences plus any non-list variables you want).
     # -------------------------------------------------------------------------
+
     a = "HELLO"
     for k in range(len(seq_seq)):
         for j in range(len(seq_seq[k])):
-            if type(seq_seq[k][j]) != str:
-                if type(a) == str:
+            if type(a) == str:
+                if seq_seq[k][j] < 0:
+                    a = seq_seq[k][j]
+            else:
+                if seq_seq[k][j] > a:
                     if seq_seq[k][j] < 0:
                         a = seq_seq[k][j]
-                else:
-                    if seq_seq[k][j] > a:
-                        if seq_seq[k][j] < 0:
-                            a = seq_seq[k][j]
     if type(a) != str:
         return a
     else:
